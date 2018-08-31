@@ -1,13 +1,13 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(!defined('ABSPATH')) exit; // Exit if accessed directly
 
 /**
  * @author  Haris Papadakis
  */
 
-add_filter('gettext', 'change_backend_product_sale_price', 100, 3 );
-function change_backend_product_sale_price( $translated_text, $text, $domain ) {
+add_filter('gettext', 'spfsp_change_name', 100, 3 );
+function spfsp_change_name( $translated_text, $text, $domain ) {
     global $pagenow;
 
     if ( is_admin() && 'woocommerce' === $domain && 'post.php' === $pagenow && isset( $_GET['post'] )
@@ -18,8 +18,8 @@ function change_backend_product_sale_price( $translated_text, $text, $domain ) {
     return $translated_text;
 }
 
-add_filter( 'woocommerce_format_sale_price', 'woocommerce_custom_sales_price', 10, 3 );
-function woocommerce_custom_sales_price( $price, $regular_price, $sale_price ) {
+add_filter( 'woocommerce_format_sale_price', 'spfsp_percentage_value', 10, 3 );
+function spfsp_percentage_value( $price, $regular_price, $sale_price ) {
     $regular_price = floatval( strip_tags($regular_price) );
     $sale_price = floatval( strip_tags($sale_price) );
     $sale_price*= 100;
