@@ -1,12 +1,13 @@
 <?php
 /**
  * Plugin Name: Set percentage for Sale price
+ * Plugin URI: https://github.com/HarisPap11/set-percentage-for-sale-price
  * Description: When you download this plugin, you will be able to set percentage discounts into your products and not a fixed price.. You could schedule the discount availability too. Requires at Wordpress 4.6.1 or newer and Woocommerce 3.1 or newer
- * Version: 1.0.1
+ * Version: 1.0.0
  * Author: Haris Papadakis
  * Author URI: https://harispapadakis.com
  * Requires at least: 3.1
- * Tested up to: 4.6.1
+ * Tested up to: 4.9.8
  *
  * Copyright: @ 2018 Haris Papadakis.
  * License: GNU General Public License v3.0
